@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href='./favicon.ico' />
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet">
+
+    <title>TEt</title>
+  </head>
+  <body class="bodyBlue">
+
+    <div id='name'>
+     <span class='name a'>Tet</span>
+     <span class='name b'>Tet</span>
+     <span class='name c'>Tet</span>
+     <span class='name d'>Tet</span>
+    </div>
+    
+    <div id='main'>
+    <div id='field'>
+      <div id='start'>press enter to start<br><br>arrows or WASD to control</div>
+    </div>
+    <div id='info'>
+      <div class='infoBlock'>next
+          <div class="infoBlockInner">	
+            <div id='next'></div>
+          </div>
+      </div>
+      <div class='infoBlock'>score
+        <div class="infoBlockInner">	
+            <span id='score'></span>
+          </div>
+      </div>
+      <div class='infoBlock'>level
+          <div class="infoBlockInner">	
+            <span id='level'></span>
+          </div>
+      </div>
+      <div class='infoBlock'>best score
+          <div class="infoBlockInner">	
+            <span id='record'></span>
+          </div>
+      </div>
+      <div class='infoBlock'>time
+        <div class="infoBlockInner">	
+            <span id='time'></span>
+          </div>
+      </div>
+    </div>	
+    </div>
+    <div id='settings' class='settingsClose'>
+      <div id="settingsIcon" class="settingsIconSvg"></div>
+      <div id="settingsInner" style="display: none;">
+         <div id='volumeBlock'>
+           <p class="settingTitle">main volume</p>
+           <span class="inputLabel">min</span>
+           <input type="range" id='inputMainVolume' min="0" max="1.2" value="0.6" step="0.005" onkeydown="event.preventDefault()">
+           <span  class="inputLabel">max</span>
+
+           <p class="settingTitle">balance</p>
+           <span class="inputLabel">fx</span>
+           <input type="range" id='inputVolumeBalance' min="0" max="1" value="0.5" step="0.005" onkeydown="event.preventDefault()">
+           <span  class="inputLabel">music</span>
+           
+         </div>
+  
+         <div id='colorBlock'>
+          <br><br>
+          <p class="settingTitle">background color</p>
+          <span class="inputLabel">grey</span>
+          <input type="range" id='inputBackgroundTheme' min="0" max="1" value="0" step="1" onkeydown="event.preventDefault()">
+          <span  class="inputLabel">blue</span>
+
+          <p class="settingTitle">color scheme</p>
+          <div id='paletteBlock' class="scroll">
+            <div id='paletteList'></div>
+            <div id='addButton'><button>ADD</button></div>
+
+          </div>
+         </div>       
+      </div>
+    </div>
+    <div id = 'editorContainer'></div>
+   
+      
+
+    </div>
+    
+    <div id='soundIcon' class="volumeIconSvg">
+    </div>
+        
+    </body>
+</html>

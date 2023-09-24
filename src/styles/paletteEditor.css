@@ -1,0 +1,117 @@
+.paletteEditor{
+    top:20vh;
+    right:30px;
+    position: absolute;
+    width: 360px;
+    height: 280px;
+    background: rgba(0,0,0,0.4);
+    border-style: groove;
+    border-width: 8px;
+    border-color: var(--brdr-color);
+    border-radius: 7px;
+    box-shadow: 0 0 7px black;
+    backdrop-filter: blur(3px);
+    font-family: 'Teko';
+    overflow: hidden;
+}
+.paletteEditorTitle{
+    color: var(--main-text-color);
+    font-size: 120%;
+    margin-left: 5px;
+}
+.edpalette{
+    width: 95%;
+    height: 50px;
+    background-size: cover;
+    position: relative;
+    display: inline-block;  
+    margin-left: 2.5%;
+    margin-top: 10px;
+}
+.edpaletteColor{
+    height: 100%;
+    width: 20px;
+    flex-grow: 1;
+}
+.edcolorSelected{
+    border: ridge 4px darkgray;
+    box-sizing: border-box;
+    transform: scale(1.2,1.2);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.edpaletteColor:hover{
+    transform: scale(1.2,1.2);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+.colorRemoveButton{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    font-size: 90%;
+    font-family: 'Teko';
+    color: var(--main-text-color);
+    text-shadow: 0 0 3px black;
+    content: 'remove';
+    text-align: center;
+    display: none;
+}
+.edpaletteColor:hover .colorRemoveButton{
+    display: block;
+}
+.colorRemoveButton:hover{
+    color: rgb(200, 0, 0);
+}
+.edpaletteColorWrapper{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+.closeIcon{position:absolute;right: -4px;top:0px;width: 20px;height: 20px;background-repeat: no-repeat;}
+.closeIcon:hover{filter: brightness(130%);}
+
+.paletteEditor input[type=range]:focus::-webkit-slider-runnable-track {
+    background: red;
+    box-shadow: 0 0 5px  var(--input-brd-color);
+}
+.addColorButton{
+    position:relative;
+    display:inline-block;
+    left: 40%;
+    width:20%;
+    background-size: cover;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.savePaletteButton{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+}
+.hexInput{
+    position: relative;
+    width: 30%;
+    left: 35%;
+    background-color: var(--brdr-color);
+    font-family: 'Teko';
+    font-size: 150%;
+    height: 20px;
+    margin-top: 5px;
+    text-align: center;
+}
+.hexInputLabel{
+    margin-top: 7px;
+    position: absolute;
+    color:var(--main-text-color);
+    font-family: 'Teko',sans-serif;
+    font-size: 100%;
+    width: 30%;
+    display: inline-block;
+    text-align: right
+}
+

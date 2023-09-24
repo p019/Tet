@@ -1,0 +1,104 @@
+html {
+       --main-text-color: darkgray;
+       --bg-color:rgb(60,60,60);
+       --brdr-color:rgba(150,150,150,0.5);
+     }
+
+*{margin: 0;user-select: none}
+
+body{height: 100vh;overflow: hidden;}
+
+.bodyBlue{background: radial-gradient(circle,var(--bg-color),black);}
+.bodyRed{background: radial-gradient(circle,rgb(120,35,35),black);}
+
+#start{position: absolute;color: var(--main-text-color);top:30%;left:35%;font-family: 'Teko', sans-serif;
+      font-size: 30px;text-shadow: 0 0 5px black;transition-duration: .4s;width: 30%;text-align: center;}
+
+.infoBlock{position: relative;height: 20%;font-family: 'Teko', sans-serif;font-size: 25px;left:5px;width: 94%;}
+           
+.infoBlockInner{position: absolute;width: 100%;height: 70%;text-align: center;font-size: 200%;
+                display: flex;justify-content: center;align-items: center;}
+
+#next{position: relative;width: 18vh;height: 9vh}
+
+.nextBlock{position: absolute;width:25%;height: 50%;
+       border:groove 7px var(--brdr-color);
+       box-sizing: border-box;border-radius: 7px;
+       box-shadow: 0 0 4px black;z-index: 0;
+       position: absolute;transition-duration: .07s;transition-timing-function: linear;opacity: 1}
+
+.rowLine{position: absolute;background: rgba(250,250,250,0.95);box-shadow: 0 0 10px white;transition: all .15s;width: 100%;height: 3%;}
+
+.rowLineEnd{transform: scale(1,0);opacity: 0}
+
+#main{position: relative;width: 80vh;margin: auto;left: 5%;height: 90vh;top:2%;}
+
+#name{position: absolute;left: 20px;top:-20px;}
+
+#field{position: absolute;width:45vh;height:100%;background: rgba(0,0,0,0.4);margin: auto;
+       border-style: groove;border-width: 8px;border-color: var(--brdr-color);
+       border-radius: 7px;box-shadow: 0 0 7px black;overflow: hidden;}
+
+#info{position: absolute;width: 25vh;height: 100%;background: rgba(0,0,0,0.4);left: 65%;color:var(--main-text-color);
+       border-style: groove;border-width: 8px;border-color: var(--brdr-color);border-radius: 7px;box-shadow: 0 0 7px black;}
+
+#settings{position: absolute;right:15px;top:2%;border-radius: 7px;border-style: groove;
+	    border-color: var(--brdr-color);}
+       
+.settingsOpen{background: rgba(0,0,0,0.4);width: 40vh;height: 90vh;
+                border-width: 8px;box-shadow: 0 0 7px black;backdrop-filter: blur(3px);}
+
+.settingsOpen #settingsIcon{margin-left: calc(100% - 18px)}
+
+.settingsClose{width: 25px;height: 25px;border-width: 0px;}
+
+#settingsIcon{position:relative;right: 0px;top:0px;width: 20px;height: 20px;background-repeat: no-repeat;}
+#settingsIcon:hover{filter: brightness(130%);}
+
+#soundIcon{position: absolute;right: 55px;top:calc(2% - 2.5px);color:var(--main-text-color);font-size: 18px;
+           transition: all .1s;width: 27px;height: 25px;background-size: contain;background-repeat: no-repeat;}
+#soundIcon:hover{filter: brightness(130%);}
+       
+.a{left:18px;top:18px;color:rgba(50,150,100,0.7);text-shadow: 0 0 10px rgba(100,100,200,0.3);}
+.b{left:21px;top:21px;color:rgba(150,50,100,0.7);}
+.c{left:24px;top:24px;color:rgba(50,50,150,0.7);}
+.d{left:27px;top:27px}
+
+.block{position: absolute;
+       border:groove 7px var(--brdr-color);
+       box-sizing: border-box;border-radius: 7px;
+       box-shadow: 0 0 4px black;
+       transition-duration: .07s;transition-timing-function: linear;opacity: 1;
+       will-change: top,left;}
+
+.main{width: 10%;height: 5%;}
+
+.next{position: absolute;width:25%;height: 50%;}
+
+.dark{box-shadow: 0 0 2px rgba(0,0,0,0.5);filter: brightness(0.95);border:ridge 7px var(--brdr-color);} 
+
+.settingTitle{
+       font-family: 'Teko', sans-serif;color: var(--main-text-color);
+       padding-left: 10%;
+       font-size: 120%;
+       padding-bottom: 4%;
+       padding-top: 10%;
+}
+
+#volumeBlock{
+      position: relative;
+      width: 100%;
+} 
+.inputLabel{
+       position: absolute;
+       color:var(--main-text-color);
+       font-family: 'Teko',sans-serif;
+       font-size: 100%;
+       width: 5vh;
+       display: inline-block;
+       text-align: right
+}
+input + .inputLabel{
+       text-align: left;
+       padding-left: 1vh;
+}

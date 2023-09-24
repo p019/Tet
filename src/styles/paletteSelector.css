@@ -1,0 +1,85 @@
+#paletteBlock{
+    margin-left: 15%;
+    width: 70%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 14vh;
+}
+.palette{
+    width: 70%;
+    height: 4vh;
+    background-size: cover;
+    position: relative;
+    display: inline-block;  
+    margin-left: 5%;
+}
+.palette:hover{
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.489);
+    transform: scale(1.05,1.05);
+    cursor: pointer;
+}
+.paletteOptions{
+    top: 0;
+    position: absolute;
+    display: none;
+}
+.palette:hover .paletteOptions{
+    display: block;
+    font-size: 80%;
+    font-family: 'teko';
+    color:var(--main-text-color);
+    margin-left: 100%;
+    position: absolute;
+}
+
+.paletteSelected{
+    transform: scale(1.05,1.05);
+    box-sizing: border-box;
+}
+.paletteSelected::after{
+    position: absolute;
+    top: 0;
+    font-size: 140%;
+    font-family: 'Teko';
+    color: var(--main-text-color);
+    text-shadow: 0 0 3px black;
+    mix-blend-mode:luminosity;
+    content: 'selected';
+}
+.paletteOptions span{
+    margin-left: 4px;
+}
+.paletteOptions span:first-child:hover{
+    color: white;
+}
+.paletteOptions span:last-child:hover{
+    color: rgb(200, 0, 0);
+}
+button{
+    background-color: var(--bg-color);
+    font-family: 'teko';
+    border-radius: 2px;
+    width: 100%;
+}
+button:hover{
+    cursor: pointer;
+    color: var(--main-text-color);
+}
+.paletteColor{
+    height: 100%;
+    width: 20px;
+    flex-grow: 1;
+}
+.paletteColorWrapper{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+#addButton{
+    position: relative;
+    bottom: 0;
+}
