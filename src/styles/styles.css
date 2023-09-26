@@ -102,3 +102,7 @@ input + .inputLabel{
        text-align: left;
        padding-left: 1vh;
 }
+.ghostBlock{
+       opacity: 0.3;
+       background-color: transparent;
+}

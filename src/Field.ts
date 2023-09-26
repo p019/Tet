@@ -7,6 +7,8 @@ import { rotateTetromino } from "./Field/rotateTetromino";
 import { Block, Tetromino } from "./types";
 import { handleLines } from "./Field/handleLines";
 import { displayPositionUpdate } from "./functions/displayPositionUpdate";
+import { config } from "./config";
+import { ghost } from "./ghost";
 
 class Field{
 
@@ -18,8 +20,8 @@ class Field{
     isOverflowed = false
 
     doStepDown = ()=>this.#move(0,1)
-    rotateTetromino = rotateTetromino.bind(this)
-    emitTetromino = emitTetromino.bind(this)
+    rotateTetromino = ()=>{rotateTetromino.bind(this)();this.updateGhost()}
+    emitTetromino = ()=>{emitTetromino.bind(this)();this.updateGhost()}
     placeTetromino = placeTetromino.bind(this)
     hardDrop = hardDrop.bind(this)
     handleLines = handleLines.bind(this)
@@ -31,11 +33,17 @@ class Field{
         const moved = this.changePosition(this.alive,x,y);
         if(this.isValidPosition(moved)){
             this.alive = moved;
-            displayPositionUpdate(this.alive)
+            displayPositionUpdate(this.alive);
+            (x!==0) && this.updateGhost();
         }
     }
     changePosition = changePosition.bind(this)
     isValidPosition = isValidPosition.bind(this)
+
+    #ghost = ghost.init(()=>this.alive,this.isValidPosition,Field.htmlElem);
+    updateGhost(){
+        config.ghostEnabled && (this.#ghost.update())
+    }
 }
 
 export { Field }

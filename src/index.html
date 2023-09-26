@@ -78,13 +78,17 @@
             <div id='addButton'><button>ADD</button></div>
 
           </div>
-         </div>       
+         </div> 
+         <div id='ghostBlock'>
+          <p class="settingTitle">ghost</p>
+          <span class="inputLabel">off</span>
+          <input type="range" id='inputGhost' min="0" max="1" value="1" step="1" onkeydown="event.preventDefault()">
+          <span  class="inputLabel">on</span>
+         </div>
+              
       </div>
     </div>
     <div id = 'editorContainer'></div>
-   
-      
-
     </div>
     
     <div id='soundIcon' class="volumeIconSvg">

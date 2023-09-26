@@ -1,6 +1,7 @@
 import { audioEngine } from "../../audioEngine";
 import { config } from "../../config";
 import { setMasterVolume, setVolume, setVolumeBalance } from "../../functions/setVolume";
+import { ghost } from "../../ghost";
 import { paletteManager } from "../../paletteManager";
 import { handleAddPalette, renderPaletteList } from "./paletteListUI";
 
@@ -101,6 +102,21 @@ const addPaletteButton = {
     })}
 }
 
+const toggleGhost = {
+  elem:document.getElementById('inputGhost'),
+  init(){
+    this.elem.addEventListener('change',()=>this.set());
+    const value = config.ghostEnabled ? 1 : 0;
+    this.elem.value = value
+    ghost.setAppearance(value)
+  },
+  set(){
+    const value = this.elem.value == 0 ? 0 : 1;
+    config.ghostEnabled = value
+    ghost.setAppearance(value)
+  }
+}
+
   function initSettingsUI(){
     settingsUI.icon.addEventListener('click', settingsUI.toggle.bind(settingsUI));
     soundButton.icon.addEventListener('click', soundButton.toggle.bind(soundButton));
@@ -109,6 +125,7 @@ const addPaletteButton = {
     soundButton.setState()
     renderPaletteList()
     addPaletteButton.init()
+    toggleGhost.init()
   }
   
 export { initSettingsUI }

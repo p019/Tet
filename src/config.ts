@@ -6,6 +6,7 @@ type Config = {
     volumeBalance:number,
     isNotMuted:1|0,
     backgroundColor:1|0,
+    ghostEnabled:1|0,
 }
 
 const defaultConfig:Config = {
@@ -14,6 +15,7 @@ const defaultConfig:Config = {
     volume:0.5,
     isNotMuted:1,
     backgroundColor:0,
+    ghostEnabled:1,
 }
 
 const config = makeSyncedWithLocalstorage(defaultConfig,'tetConfig') as Config
