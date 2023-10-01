@@ -1,4 +1,4 @@
-import { touchController } from "../touchController";
+import { touchController } from "../utils/touchController";
 
 type Direction = 'down'|'up'|'left'|'right';
 

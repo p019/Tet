@@ -53,7 +53,6 @@ const touchController = {
     unregister(type:Gesture,callback:Function){
         console.log(this.callbacks[type].indexOf(callback))
         this.callbacks[type].splice(this.callbacks[type].indexOf(callback),1);
-        console.log(this.callbacks)
     }
 
 }

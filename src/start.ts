@@ -12,6 +12,7 @@ import { timer } from "./components/infoComponents/timer";
 import { keyboardEventManager } from "./utils/KeyboardEventManager";
 import { setVolume } from "./functions/setVolume";
 import { mapSwipeToKey } from "./functions/mapSwipesToKeys";
+import { pause, resume } from "./functions/pause";
 
 function start(){
     document.querySelector('body').className = 'bodyBlue';
@@ -21,6 +22,8 @@ function start(){
     document.querySelector('#restart').classList.add('hide');
 
     document.querySelector('#field')!.removeEventListener('click',start);
+    window.addEventListener('blur',pause)
+    window.addEventListener('focus',resume)
 
     bag.create()
 

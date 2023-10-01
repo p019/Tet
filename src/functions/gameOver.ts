@@ -7,6 +7,7 @@ import { stepper } from "../stepper";
 import { keyboardEventManager } from "../utils/KeyboardEventManager";
 import { getFieldControls } from "./getFieldControls";
 import { unMapSwipeToKey } from "./mapSwipesToKeys";
+import { pause, resume } from "./pause";
 
 
 function setColor(elem:HTMLElement){
@@ -22,6 +23,9 @@ function paintRed(){
 function gameOver(field:Field){
     stepper.stop()
     timer.stop()
+
+    window.removeEventListener('blur',pause)
+    window.removeEventListener('focus',resume)
 
     document.querySelector('body')!.className = 'bodyRed';
     document.querySelector('#info').classList.remove('smallInfo');

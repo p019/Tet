@@ -76,6 +76,12 @@ class AudioEngine{
       this.audio[name].currentTime=0;
       this.audio[name].pause()
    }
+   pause(name:SoundName){
+      this.audio[name].pause()
+   }
+   resume(name:SoundName){
+      this.audio[name].play()
+   }
    repeatPlay(name:SoundName){
       const play = this.play.bind(this)
       play(name);

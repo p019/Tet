@@ -12,7 +12,7 @@ import { keyboardEventManager } from "./utils/KeyboardEventManager";
 import { highestScore } from './components/infoComponents/highestScore';
 import { initSettingsUI } from './components/settings/settingsUI';
 import { Field } from './Field'
-import { touchController } from './touchController'
+import { touchController } from './utils/touchController'
 import { detectMobile } from './utils/detectMobile'
 
 keyboardEventManager.init()
