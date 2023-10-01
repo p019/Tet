@@ -31,9 +31,11 @@ body{height: 100vh;overflow: hidden;}
 
 .rowLineEnd{transform: scale(1,0);opacity: 0}
 
-#main{position: relative;width: 80vh;margin: auto;left: 5%;height: 90vh;top:2%;}
+#main{position: relative;width: 80dvh;margin: auto;left: 5%;height: 90dvh;top:2%;}
 
 #name{position: absolute;left: 20px;top:-20px;}
+.name{color:rgba(50,50,100,0.7);position: absolute;left: 15px;top:15px;font-family: 'Teko', sans-serif;
+       font-size: 60px;text-shadow: 0 0 3px black}
 
 #field{position: absolute;width:45vh;height:100%;background: rgba(0,0,0,0.4);margin: auto;
        border-style: groove;border-width: 8px;border-color: var(--brdr-color);
@@ -46,7 +48,9 @@ body{height: 100vh;overflow: hidden;}
 	    border-color: var(--brdr-color);}
        
 .settingsOpen{background: rgba(0,0,0,0.4);width: 40vh;height: 90vh;
-                border-width: 8px;box-shadow: 0 0 7px black;backdrop-filter: blur(3px);}
+                border-width: 8px;box-shadow: 0 0 7px black;backdrop-filter: blur(3px);
+                overflow-y: auto;overflow-x: hidden;
+              }
 
 .settingsOpen #settingsIcon{margin-left: calc(100% - 18px)}
 
@@ -105,4 +109,10 @@ input + .inputLabel{
 .ghostBlock{
        opacity: 0.3;
        background-color: transparent;
+}
+#controlsText::after{
+       content: 'arrows or WASD to control';
+}
+#startText::after{
+       content: 'press enter to start';
 }

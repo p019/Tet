@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link rel="icon" type="image/x-icon" href='./favicon.ico' />
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet">
 
@@ -19,9 +19,10 @@
     
     <div id='main'>
     <div id='field'>
-      <div id='start'>press enter to start<br><br>arrows or WASD to control</div>
+      <div id='start'><span id='startText'></span><br><br><span id='controlsText'></span></div>
     </div>
-    <div id='info'>
+
+    <div id='info' class="hide smallInfo">
       <div class='infoBlock'>next
           <div class="infoBlockInner">	
             <div id='next'></div>
@@ -49,6 +50,9 @@
       </div>
     </div>	
     </div>
+
+    <p id="restart" class="hide"></p>
+
     <div id='settings' class='settingsClose'>
       <div id="settingsIcon" class="settingsIconSvg"></div>
       <div id="settingsInner" style="display: none;">

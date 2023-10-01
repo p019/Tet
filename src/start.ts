@@ -11,9 +11,17 @@ import { tetrominoPreview } from "./components/infoComponents/tetrominoPreview";
 import { timer } from "./components/infoComponents/timer";
 import { keyboardEventManager } from "./utils/KeyboardEventManager";
 import { setVolume } from "./functions/setVolume";
+import { mapSwipeToKey } from "./functions/mapSwipesToKeys";
 
 function start(){
     document.querySelector('body').className = 'bodyBlue';
+    document.querySelector('#info').classList.remove('hide');
+    document.querySelector('#info').classList.remove('hideNext');
+    document.querySelector('#info').classList.add('smallInfo');
+    document.querySelector('#restart').classList.add('hide');
+
+    document.querySelector('#field')!.removeEventListener('click',start);
+
     bag.create()
 
     const field = new Field()
@@ -21,6 +29,8 @@ function start(){
     field.emitTetromino()
     
     keyboardEventManager.register(getFieldControls(field))
+
+    mapSwipeToKey();
 
     const doStep = createStepFunction(field)
 
