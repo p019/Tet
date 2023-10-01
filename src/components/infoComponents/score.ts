@@ -8,6 +8,7 @@ const score = {
     lineCount:0,
     new(){
         this.current = 0;
+        this.lineCount = 0;
         this.display()
     },
     add(lineCount:number){
