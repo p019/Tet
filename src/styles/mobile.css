@@ -7,7 +7,7 @@
     #info{
         position: absolute;
         top:0;
-        left: calc((100vw - 50dvh)/2 + 7px);
+        
         background: transparent;
         border: none;
         box-shadow: none;
@@ -34,9 +34,7 @@
    
     }
     #field{
-        left: calc((100vw - 50dvh)/2);
-        width: 50dvh;
-        height: 100dvh;
+
         box-sizing:border-box;
      
     }
@@ -48,15 +46,34 @@
         overflow-x: hidden;
         overflow-y: scroll;
     }
-    .hide{
-        display: none;
-    }
     .paletteEditor{
         width: 100vw;
         box-sizing: border-box;
         right: 0;
     }
     #name{display: none;}
+}
+@media (orientation:portrait) and (0.5 <= aspect-ratio){
+    #info{
+        left: calc((100vw - 50dvh)/2 + 7px);
+    }
+    #field{
+        left: calc((100vw - 50dvh)/2);
+        width: 50dvh;
+        height: 100dvh;
+    }
+}
+@media (0.5 > aspect-ratio){
+    #info{
+        left: 10px;
+    }
+    #field{
+        top:calc((100dvh - 200dvw)/2);
+        width: 100dvw;
+        height: 200dvw;
+        border-left: none;
+        border-right: none;
+    }
 }
 @media (hover:none){
     @keyframes fadeinout {

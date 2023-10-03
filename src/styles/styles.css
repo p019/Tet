@@ -21,6 +21,10 @@ body{height: 100vh;overflow: hidden;}
 
 #next{position: relative;width: 18vh;height: 9vh}
 
+.hide{
+       display: none;
+   }
+
 .nextBlock{position: absolute;width:25%;height: 50%;
        border:groove 7px var(--brdr-color);
        box-sizing: border-box;border-radius: 7px;
