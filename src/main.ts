@@ -13,6 +13,11 @@ import { highestScore } from './components/infoComponents/highestScore';
 import { initSettingsUI } from './components/settings/settingsUI';
 import { Field } from './Field'
 import { touchController } from './utils/touchController'
+import { handleResize } from './utils/dynamicWindowSize'
+
+
+handleResize()
+window.addEventListener('resize',handleResize)
 
 const workerScript = document.createElement('script');
 workerScript.src = new URL('./sw.js', import.meta.url).href;
