@@ -6,13 +6,9 @@ html {
 
 *{margin: 0;user-select: none}
 
-body{height: 100vh;overflow: hidden;}
 
-.bodyBlue{background: radial-gradient(circle,var(--bg-color),black);}
 .bodyRed{background: radial-gradient(circle,rgb(120,35,35),black);}
 
-#start{position: absolute;color: var(--main-text-color);top:30%;left:35%;font-family: 'Teko', sans-serif;
-      font-size: 30px;text-shadow: 0 0 5px black;transition-duration: .4s;width: 30%;text-align: center;}
 
 .infoBlock{position: relative;height: 20%;font-family: 'Teko', sans-serif;font-size: 25px;left:5px;width: 94%;}
            
@@ -35,15 +31,11 @@ body{height: 100vh;overflow: hidden;}
 
 .rowLineEnd{transform: scale(1,0);opacity: 0}
 
-#main{position: relative;width: calc(80 * var(--dvh));margin: auto;left: 5%;height: calc(90 * var(--dvh));top:2%;}
+#main{width: calc(80 * var(--dvh));height: calc(90 * var(--dvh))}
 
 #name{position: absolute;left: 20px;top:-20px;}
 .name{color:rgba(50,50,100,0.7);position: absolute;left: 15px;top:15px;font-family: 'Teko', sans-serif;
        font-size: 60px;text-shadow: 0 0 3px black}
-
-#field{position: absolute;width:45vh;height:100%;background: rgba(0,0,0,0.4);margin: auto;
-       border-style: groove;border-width: 8px;border-color: var(--brdr-color);
-       border-radius: 7px;box-shadow: 0 0 7px black;overflow: hidden;}
 
 #info{position: absolute;width: 25vh;height: 100%;background: rgba(0,0,0,0.4);left: 65%;color:var(--main-text-color);
        border-style: groove;border-width: 8px;border-color: var(--brdr-color);border-radius: 7px;box-shadow: 0 0 7px black;}
