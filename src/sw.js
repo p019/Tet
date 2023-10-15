@@ -4,7 +4,6 @@ self.isStandalone = false;
 
 addEventListener("message", (event) => {
     self.isStandalone = ((isStandalone in event.data) && (event.data.isStandalone))
-    alert(self.isStandalone)
   });
 
 self.addEventListener('fetch',(event)=>{
