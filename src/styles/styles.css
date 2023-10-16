@@ -1,14 +1,6 @@
-html {
-       --main-text-color: darkgray;
-       --bg-color:rgb(60,60,60);
-       --brdr-color:rgba(150,150,150,0.5);
-     }
-
 *{margin: 0;user-select: none}
 
-
 .bodyRed{background: radial-gradient(circle,rgb(120,35,35),black);}
-
 
 .infoBlock{position: relative;height: 20%;font-family: 'Teko', sans-serif;font-size: 25px;left:5px;width: 94%;}
            
@@ -16,10 +8,6 @@ html {
                 display: flex;justify-content: center;align-items: center;}
 
 #next{position: relative;width: 18vh;height: 9vh}
-
-.hide{
-       display: none;
-   }
 
 .nextBlock{position: absolute;width:25%;height: 50%;
        border:groove 7px var(--brdr-color);
