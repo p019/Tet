@@ -3,7 +3,7 @@ const cacheName = 'TetCache_V1.0';
 self.isStandalone = false;
 
 addEventListener("message", (event) => {
-    self.isStandalone = ((isStandalone in event.data) && (event.data.isStandalone))
+    self.isStandalone = ('isStandalone' in event.data) && (event.data.isStandalone)
   });
 
 self.addEventListener('fetch',(event)=>{
@@ -12,6 +12,7 @@ self.addEventListener('fetch',(event)=>{
 
 async function cacheFirst(request){
     const cached = await caches.match(request);
+    console.log('cached: ',cached)
 
     var response;
    
@@ -28,7 +29,7 @@ async function cacheFirst(request){
         
     }
 
-    return cached || response
+    return cached || response.clone()
 }
 
 self.addEventListener("activate", async(event) => {
