@@ -12,7 +12,6 @@ self.addEventListener('fetch',(event)=>{
 
 async function cacheFirst(request){
     const cached = await caches.match(request);
-    console.log('cached: ',cached)
 
     var response;
    
