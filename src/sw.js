@@ -21,7 +21,7 @@ async function cacheFirst(request){
     }else{
         try{
             let response = await fetch(request.url)
-            writeCache(request,response)
+            writeCache(request,response.clone())
             return response
         }catch(err){
             console.log(err)
@@ -41,7 +41,7 @@ async function writeCache(request,response){
         }
 
         if(response && response.ok){
-            (await caches.open(cacheName)).put(request,response.clone())
+            (await caches.open(cacheName)).put(request,response)
         }
 
 
