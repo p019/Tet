@@ -1,5 +1,3 @@
-### Yet another tetris clone
-
 It’s a TypeScript-rewritten, module-splitted, and slightly refactored version of the game I made in 2020 with some additional features.
 
 features:
