@@ -33,7 +33,7 @@ async function cacheFirst(request){
 
 async function writeCache(request,response){
 
-    if(!response && request.destination === 'audio'){return}
+    if((!response && request.destination === 'audio' ) || (!self.isStandalone && request.destination === 'audio' )){return}
 
     try{
         if(!response){
