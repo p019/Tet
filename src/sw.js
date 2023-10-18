@@ -7,28 +7,47 @@ addEventListener("message", (event) => {
   });
 
 self.addEventListener('fetch',(event)=>{
+    
     event.respondWith(cacheFirst(event.request));
+
 })
 
 async function cacheFirst(request){
     const cached = await caches.match(request);
 
-    var response;
-   
-    if(!(cached && request.destination === 'audio')){
-        
+    if(cached){ 
+        writeCache(request,undefined) 
+        return cached
+    }else{
         try{
-            response = await fetch(request.url)
-            if(response.ok && self.isStandalone){
-               (await caches.open(cacheName)).put(request,response)
-            }
+            let response = await fetch(request.url)
+            writeCache(request,response)
+            return response
         }catch(err){
             console.log(err)
         }
         
     }
 
-    return cached || response.clone()
+}
+
+async function writeCache(request,response){
+
+    if(!response && request.destination === 'audio'){return}
+
+    try{
+        if(!response){
+           response = await fetch(request.url)
+        }
+
+        if(response && response.ok){
+            (await caches.open(cacheName)).put(request,response.clone())
+        }
+
+
+    }catch(err){
+        console.log(err)
+    }
 }
 
 self.addEventListener("activate", async(event) => {
