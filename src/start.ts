@@ -22,8 +22,7 @@ function start(){
     document.querySelector('#restart').classList.add('hide');
 
     document.querySelector('#field')!.removeEventListener('click',start);
-    //window.addEventListener('blur',pause)
-    //window.addEventListener('focus',resume)
+
     document.addEventListener('visibilitychange',handleVisibilityChange)
 
     bag.create()
