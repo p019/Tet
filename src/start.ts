@@ -13,6 +13,7 @@ import { keyboardEventManager } from "./utils/KeyboardEventManager";
 import { setVolume } from "./functions/setVolume";
 import { mapSwipeToKey } from "./functions/mapSwipesToKeys";
 import { handleVisibilityChange } from "./functions/pause";
+import { config } from "./config";
 
 function start(){
     document.querySelector('body').className = 'bodyBlue';
@@ -51,8 +52,11 @@ function start(){
     
     audioEngine.initAudio()
     setVolume()
-    audioEngine.stop('end')
-    audioEngine.repeatPlay('music')
+    audioEngine.stop('end');
+
+    if(config.isNotMuted){
+        audioEngine.repeatPlay('music')
+    }
 }
 
 export { start }

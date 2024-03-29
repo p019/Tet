@@ -9,6 +9,11 @@ function setVolumeBalance(){
     audioEngine.setFXVolume(fxVolume);
 }
 function setMasterVolume(){
+    if(!config.isNotMuted){
+        audioEngine.stop('music');
+    }else{
+        audioEngine.resume('music');
+    }
     audioEngine.setSumVolume(config.volume * config.isNotMuted)
 }
 
