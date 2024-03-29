@@ -38,10 +38,10 @@ const soundButton = {
     toggle() {
       this.muted = !this.muted;
       this.setIcon()
-      const factor = this.muted ? 0 : 1;
-      config.isNotMuted = factor;
+      const flag = this.muted ? 0 : 1;
+      config.isNotMuted = flag;
       if (audioEngine.isInited) {
-        setVolume()
+        setVolume();
       }
   
     },
