@@ -51,12 +51,10 @@ function start(){
     timer.start()
     
     audioEngine.initAudio()
-    setVolume()
+   
     audioEngine.stop('end');
 
-    if(config.isNotMuted){
-        audioEngine.repeatPlay('music')
-    }
+    setVolume()
 }
 
 export { start }

@@ -9,12 +9,12 @@ function setVolumeBalance(){
     audioEngine.setFXVolume(fxVolume);
 }
 function setMasterVolume(){
+    audioEngine.setSumVolume(config.volume * config.isNotMuted)
     if(!config.isNotMuted){
         audioEngine.stop('music');
     }else{
-        audioEngine.resume('music');
-    }
-    audioEngine.setSumVolume(config.volume * config.isNotMuted)
+        audioEngine.repeatResume('music');
+    } 
 }
 
 function setVolume(){

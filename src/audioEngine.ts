@@ -28,7 +28,9 @@ class AudioEngine{
 
    isInited:Boolean=false;
 
-   audio = {} as Record<SoundName,MyAudioElem>
+   audio = {} as Record<SoundName,MyAudioElem>;
+
+   volume:number;
 
    initAudio(){
       if(this.isInited){return}
@@ -55,9 +57,13 @@ class AudioEngine{
          return (value:number)=>{node.gain.linearRampToValueAtTime(loudness(value), audioContext!.currentTime + 0.1)}
       }
       
-      this.setMusicVolume = createVolumeSetter(musicVolumeNode)
-      this.setFXVolume = createVolumeSetter(SFXVolumeNode)
-      this.setSumVolume = createVolumeSetter(sumVolumeNode)
+      this.setMusicVolume = createVolumeSetter(musicVolumeNode);
+      this.setFXVolume = createVolumeSetter(SFXVolumeNode);
+      
+      this.setSumVolume = (()=>{
+         let volumeSetter = createVolumeSetter(sumVolumeNode);
+         return (value:number)=>{volumeSetter(value);this.volume = value}
+      })()
 
       this.isInited = true
    };
@@ -68,13 +74,18 @@ class AudioEngine{
       } 
    };
    play(name:SoundName,duration:number|undefined = undefined){
+      if(this.volume === 0){return}
+
       this.audio[name].currentTime=0;
       this.audio[name].play()
       duration && setTimeout(()=>{this.audio[name].pause()},duration)
    };
    stop(name:SoundName){
       this.audio[name].currentTime=0;
-      this.audio[name].pause()
+      this.audio[name].pause();
+
+      const play = this.play.bind(this)
+      this.audio[name].removeEventListener('ended', ()=>play(name))
    }
    pause(name:SoundName){
       this.audio[name].pause()
@@ -86,6 +97,11 @@ class AudioEngine{
       const play = this.play.bind(this)
       play(name);
       this.audio[name].addEventListener('ended', ()=>play(name));
+   }
+   repeatResume(name:SoundName){
+      const resume = this.resume.bind(this)
+      resume(name)
+      this.audio[name].addEventListener('ended', ()=>resume(name));
    }
    setSpeed(name:SoundName,multiplier:number){
       this.audio[name].playbackRate = multiplier;
