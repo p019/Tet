@@ -21,7 +21,9 @@ function flashLine(n:number) {
   }
 
 function placeDead(field:Field['field']) {
-    field.forEach((row,i)=>{row.forEach(block=>{block!.elem.style.top=i*5+'%'})})
+    field.forEach((row,i)=>{row.forEach(block=>{
+      block.elem.style.transform = `translate(${block.x * 100}%,${i * 100}%)`; 
+    })})
   }
 
 function setTransition(n:number,field:Field['field']) {
@@ -29,7 +31,7 @@ function setTransition(n:number,field:Field['field']) {
         (line)=>{
             line.forEach(
                 (block,m)=>{
-                    block!.elem.style.transition=`top ${2*n/10}s ease-in ${(block!.x+m)/50}s`
+                    block!.elem.style.transition=`transform ${2*n/10}s ease-in ${(block!.x+m)/50}s`
                 })}
         ) 
 }

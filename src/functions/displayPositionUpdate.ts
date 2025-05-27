@@ -20,8 +20,7 @@ function displayNextTetromino(tetromino:Tetromino){
 function displayPositionUpdate(tetromino:Tetromino){
   requestAnimationFrame(()=>{
     tetromino.forEach(block => {
-        block.elem.style.left=(block.x)*10+'%';
-        block.elem.style.top=(block.y)*5+'%';
+        block.elem.style.transform = `translate(${block.x * 100}%,${block.y * 100}%)`; 
     })
   })
    

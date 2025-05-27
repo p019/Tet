@@ -27,9 +27,7 @@ class Ghost{
         while (this.check(alive, 0, c)) { c++ ; };
         requestAnimationFrame(()=>{
             this.ghost.forEach((ghostBlock:HTMLElement,i:number)=>{
-                //ghostBlock.style.transform = `translate(${alive[i].x * 100}%,${(alive[i].y + c - 1) * 100}%)`; 
-                ghostBlock.style.left=(alive[i].x)*10+'%';
-                ghostBlock.style.top=(alive[i].y + c-1)*5+'%';
+                ghostBlock.style.transform = `translate(${alive[i].x * 100}%,${(alive[i].y + c - 1) * 100}%)`; 
                 })
             })
     }
