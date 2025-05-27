@@ -17,6 +17,7 @@ const touchController = {
         this.detectSwipe.startPoint = {x:e.touches[0].screenX,y:e.touches[0].screenY,time:e.timeStamp}
     },
     handleMove(e:TouchEvent){
+        e.preventDefault()
         this.detectSwipe(e.touches[0].screenX,e.touches[0].screenY,e.timeStamp);
     },
     handleEnd(e:TouchEvent){
