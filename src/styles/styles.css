@@ -61,7 +61,7 @@
        box-sizing: border-box;border-radius: 7px;
        box-shadow: 0 0 4px black;
        transition-duration: .07s;transition-timing-function: linear;opacity: 1;
-       will-change: top,left;
+       will-change: transform;
        contain: content;
 }
 
